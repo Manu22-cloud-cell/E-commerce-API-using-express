@@ -1,17 +1,16 @@
 const express=require("express");
 const router=express.Router();
+const productsController=require('../controllers/productsController');
 
-router.get("/",(req,res)=>{
-    res.send("Fetching all products")
-});
 
-router.post("/",(req,res)=>{
-    res.send("Adding a new product")
-});
+router.get("/",productsController.getProducts);
 
-router.get("/:id",(req,res)=>{
-    const id=req.params.id;
-    res.send(`Fetching product with ID: ${id}`)
-})
+router.post("/",productsController.postProducts);
+
+router.get("/:id",productsController.getProductsById);
+
+router.put("/:id",productsController.editProducts);
+
+router.delete("/:id",productsController.deleteProductsById)
 
 module.exports=router;
