@@ -1,23 +1,36 @@
+const {
+    getProductsService,
+    getProductsByIdService,
+    postProductsService,
+    editProductsService,
+    deleteProductsByIdService
+} = require("../services/productServices")
+
 const getProducts=(req,res)=>{
-    res.send("Fetching all products")
-}
+    const result=getProductsService();
+    res.send(result);
+};
 
 const getProductsById=(req,res)=>{
     const id=req.params.id;
-    res.send(`Fetching product with ID: ${id}`)
-}
+    const result=getProductsByIdService(id);
+    res.send(result);
+};
 
 const postProducts=(req,res)=>{
-    res.send("Adding a new product")
-}
+    const result=postProductsService();
+    res.send(result);
+};
 
 const editProducts=(req,res)=>{
-    res.send("Put request called")
-}
+    const result=editProductsService();
+    res.send(result);
+};
 
 const deleteProductsById=(req,res)=>{
-    res.send("Delete request called")
-}
+    const result=deleteProductsByIdService();
+    res.send(result);
+};
 
 module.exports={
     getProducts,
@@ -25,4 +38,4 @@ module.exports={
     postProducts,
     editProducts,
     deleteProductsById
-}
+};
