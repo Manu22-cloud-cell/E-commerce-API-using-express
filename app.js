@@ -7,9 +7,9 @@ const cartRouter=require("./routes/cartRoutes");
 
 app.use(express.json());
 
-app.use("/users",userRouter);
-app.use("/products",productRouter);
-app.use("/cart",cartRouter);
+app.use("/api/users",userRouter);
+app.use("/api/products",productRouter);
+app.use("/api/cart",cartRouter);
 
 app.use((req,res)=>{
     res.status(404).send("Page not found");
