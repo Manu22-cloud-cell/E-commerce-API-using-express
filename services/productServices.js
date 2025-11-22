@@ -1,6 +1,8 @@
+const path=require('path');
 
+//using path module to return the html file via services to controller
 const getProductsService=()=>{
-    return "Fetching all products";
+    return path.join(__dirname,"..","views","products.html");
 };
 
 const getProductsByIdService=(id)=>{

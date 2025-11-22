@@ -7,8 +7,8 @@ const {
 } = require("../services/productServices")
 
 const getProducts=(req,res)=>{
-    const result=getProductsService();
-    res.send(result);
+    const filePath = getProductsService();
+    res.sendFile(filePath);
 };
 
 const getProductsById=(req,res)=>{
