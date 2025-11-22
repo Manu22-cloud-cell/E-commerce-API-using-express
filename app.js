@@ -7,6 +7,9 @@ const cartRouter=require("./routes/cartRoutes");
 
 app.use(express.json());
 
+//static folder
+app.use(express.static('public'));
+
 app.use("/api/users",userRouter);
 app.use("/api/products",productRouter);
 app.use("/api/cart",cartRouter);

@@ -9,8 +9,10 @@ const getProductsByIdService=(id)=>{
     return `Fetching product with ID: ${id}`
 };
 
-const postProductsService=()=>{
-    return "Adding a new product";
+//
+const postProductsService=(req)=>{
+    const data=req.body;
+    return data;
 };
 
 const editProductsService=()=>{

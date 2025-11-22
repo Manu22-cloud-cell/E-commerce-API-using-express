@@ -18,8 +18,8 @@ const getProductsById=(req,res)=>{
 };
 
 const postProducts=(req,res)=>{
-    const result=postProductsService();
-    res.send(result);
+    const result=postProductsService(req);
+    res.json({value:result.productName});
 };
 
 const editProducts=(req,res)=>{
